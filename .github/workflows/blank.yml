@@ -7,4 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          HOME_ID: ${{ secrets.HOME_ID }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: ./mimi.sh
