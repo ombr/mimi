@@ -7,6 +7,6 @@ if [ "$out_of_sight" = "true" ]; then
   echo "ERROR !"
   exit 1
 else
-  curl -d "m=presence_ok" "https://nosnch.in/$DEADMANSNITCH_ID"
+  curl -s -d "m=presence_ok" "https://nosnch.in/$DEADMANSNITCH_ID"
   exit 0;
 fi;
