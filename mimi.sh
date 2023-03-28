@@ -1,0 +1,3 @@
+#!/bin/bash
+token=$(curl -X POST "https://api.netatmo.com/oauth2/token" -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" -d "grant_type=refresh_token&refresh_token=$REFRESH_TOKEN&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET" | jq -r ".access_token")
+curl -X GET "https://api.netatmo.com/api/homestatus?home_id=$HOME_ID" -H "accept: application/json" -H "Authorization: Bearer $token" | jq ".body.home.persons[0].out_of_sight"
