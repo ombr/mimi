@@ -14,4 +14,5 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           HOME_ID: ${{ secrets.HOME_ID }}
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+          DEADMANSNITCH_ID: ${{ secrets.DEADMANSNITCH_ID }}
         run: ./mimi.sh
